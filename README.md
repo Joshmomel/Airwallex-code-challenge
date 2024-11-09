@@ -16,6 +16,7 @@ A React application for managing a waitlist system, built with TypeScript and St
 
 ```bash
 nvm install
+nvm use
 yarn install
 ```
 
