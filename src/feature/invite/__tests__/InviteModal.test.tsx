@@ -58,9 +58,7 @@ describe('InviteModal', () => {
     });
     render(<InviteModal onClose={mockOnClose} />);
 
-    expect(
-      await screen.findByText('Email addresses do not match'),
-    ).toBeInTheDocument();
+    expect(await screen.findByText('Email addresses do not match')).toBeInTheDocument();
   });
 
   it('submits form successfully', async () => {

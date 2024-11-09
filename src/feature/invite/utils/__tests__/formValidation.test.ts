@@ -25,9 +25,7 @@ describe('validateForm', () => {
 
     const errors = validateForm(values);
 
-    expect(errors[INVITE_FORM_FIELDS.FULL_NAME]).toContain(
-      'must be at least 3 characters long',
-    );
+    expect(errors[INVITE_FORM_FIELDS.FULL_NAME]).toContain('must be at least 3 characters long');
   });
 
   it('should validate email format', () => {
@@ -39,9 +37,7 @@ describe('validateForm', () => {
 
     const errors = validateForm(values);
 
-    expect(errors[INVITE_FORM_FIELDS.EMAIL]).toBe(
-      'Please enter a valid email address',
-    );
+    expect(errors[INVITE_FORM_FIELDS.EMAIL]).toBe('Please enter a valid email address');
   });
 
   it('should validate matching emails', () => {
@@ -53,9 +49,7 @@ describe('validateForm', () => {
 
     const errors = validateForm(values);
 
-    expect(errors[INVITE_FORM_FIELDS.CONFIRM_EMAIL]).toBe(
-      'Email addresses do not match',
-    );
+    expect(errors[INVITE_FORM_FIELDS.CONFIRM_EMAIL]).toBe('Email addresses do not match');
   });
 
   it('should return no errors for valid input', () => {

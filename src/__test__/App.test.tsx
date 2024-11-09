@@ -6,12 +6,8 @@ describe('App', () => {
     render(<App />);
 
     expect(screen.getByText('Broccoli & Co.')).toBeInTheDocument();
-    expect(
-      screen.getByText('A better way to enjoy every day.'),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(/2024 Broccoli & Co. All rights reserved./),
-    ).toBeInTheDocument();
+    expect(screen.getByText('A better way to enjoy every day.')).toBeInTheDocument();
+    expect(screen.getByText(/2024 Broccoli & Co. All rights reserved./)).toBeInTheDocument();
   });
 
   it('opens invite modal when request button is clicked', () => {

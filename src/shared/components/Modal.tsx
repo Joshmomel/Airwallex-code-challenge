@@ -44,8 +44,7 @@ const CloseButton = styled.button`
 
   &:focus,
   &:hover {
-    outline: ${({ theme }) =>
-      `${theme.borders.width.base} dotted ${theme.colors.text}`};
+    outline: ${({ theme }) => `${theme.borders.width.base} dotted ${theme.colors.text}`};
     outline-offset: ${({ theme }) => theme.borders.width.base};
   }
 `;
@@ -80,10 +79,7 @@ const Modal = React.memo<ModalProps>(({ title, handleDismiss, children }) => {
       <RemoveScroll>
         <Wrapper>
           <Dialog role="dialog" aria-modal="true" aria-label={title}>
-            <CloseButton
-              onClick={handleDismiss}
-              data-testid="modal-close-button"
-            >
+            <CloseButton onClick={handleDismiss} data-testid="modal-close-button">
               <Close />
               <VisuallyHidden>Dismiss modal</VisuallyHidden>
             </CloseButton>

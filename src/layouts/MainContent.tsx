@@ -46,8 +46,7 @@ const RequestButton = styled.button`
   background-color: ${({ theme }) => theme.colors.background};
   cursor: pointer;
   font-size: ${({ theme }) => theme.typography.fontSize.base};
-  padding: ${({ theme }) => theme.spacing.unit}
-    ${({ theme }) => theme.spacing.xl};
+  padding: ${({ theme }) => theme.spacing.unit} ${({ theme }) => theme.spacing.xl};
   transition: background-color 0.3s;
 
   &:focus {
@@ -71,9 +70,7 @@ const MainContent = React.memo<MainContentProps>(({ onRequestInvite }) => {
       <Content>
         <Heading>A better way to enjoy every day.</Heading>
         <SubHeading>Join our waitlist for early access.</SubHeading>
-        <RequestButton onClick={onRequestInvite}>
-          Request an Invite
-        </RequestButton>
+        <RequestButton onClick={onRequestInvite}>Request an Invite</RequestButton>
       </Content>
     </ContentWrapper>
   );

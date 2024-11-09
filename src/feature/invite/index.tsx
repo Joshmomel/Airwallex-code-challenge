@@ -10,19 +10,14 @@ interface InviteModalProps {
 }
 
 const InviteModal = React.memo<InviteModalProps>(({ onClose }) => {
-  const { successMessage, isSubmitting, errors, handleSubmit } =
-    useInviteForm();
+  const { successMessage, isSubmitting, errors, handleSubmit } = useInviteForm();
 
   return (
     <Modal title="Request an Invite" handleDismiss={onClose}>
       {successMessage ? (
         <InviteSuccess onClose={onClose} />
       ) : (
-        <InviteForm
-          errors={errors}
-          isSubmitting={isSubmitting}
-          handleSubmit={handleSubmit}
-        />
+        <InviteForm errors={errors} isSubmitting={isSubmitting} handleSubmit={handleSubmit} />
       )}
     </Modal>
   );

@@ -21,16 +21,14 @@ const OkButton = styled.button`
   width: 100%;
   padding: ${({ theme }) => theme.spacing.unit};
   font-size: ${({ theme }) => theme.typography.fontSize.base};
-  border: ${({ theme }) => theme.borders.width.base} solid
-    ${({ theme }) => theme.colors.text};
+  border: ${({ theme }) => theme.borders.width.base} solid ${({ theme }) => theme.colors.text};
   background: transparent;
   cursor: pointer;
   border-radius: ${({ theme }) => theme.borders.radius.base};
 
   &:hover,
   &:focus-visible {
-    outline: ${({ theme }) =>
-      `${theme.borders.width.base} dotted ${theme.colors.text}`};
+    outline: ${({ theme }) => `${theme.borders.width.base} dotted ${theme.colors.text}`};
     outline-offset: ${({ theme }) => theme.borders.width.base};
   }
 `;
@@ -43,9 +41,7 @@ const InviteSuccess = React.memo<InviteSuccessProps>(({ onClose }) => {
   return (
     <>
       <SuccessTitle>All done!</SuccessTitle>
-      <SuccessMessage>
-        You're on the exclusive list for early access to Broccoli & Co.
-      </SuccessMessage>
+      <SuccessMessage>You're on the exclusive list for early access to Broccoli & Co.</SuccessMessage>
       <OkButton onClick={onClose}>OK</OkButton>
     </>
   );

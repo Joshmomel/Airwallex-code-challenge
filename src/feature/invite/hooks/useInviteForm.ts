@@ -1,8 +1,5 @@
 import { useState, useCallback } from 'react';
-import {
-  FormErrors,
-  validateForm,
-} from 'src/feature/invite/utils/formValidation';
+import { FormErrors, validateForm } from 'src/feature/invite/utils/formValidation';
 import { INVITE_FORM_FIELDS } from 'src/feature/invite/utils/constants';
 import { INVITATION_REQUEST_URL } from 'src/shared/utils/urls';
 
@@ -27,8 +24,7 @@ export const useInviteForm = (): UseInviteFormReturn => {
     const formValues = {
       [INVITE_FORM_FIELDS.FULL_NAME]: form[INVITE_FORM_FIELDS.FULL_NAME].value,
       [INVITE_FORM_FIELDS.EMAIL]: form[INVITE_FORM_FIELDS.EMAIL].value,
-      [INVITE_FORM_FIELDS.CONFIRM_EMAIL]:
-        form[INVITE_FORM_FIELDS.CONFIRM_EMAIL].value,
+      [INVITE_FORM_FIELDS.CONFIRM_EMAIL]: form[INVITE_FORM_FIELDS.CONFIRM_EMAIL].value,
     };
 
     const newErrors = validateForm(formValues);
@@ -56,8 +52,7 @@ export const useInviteForm = (): UseInviteFormReturn => {
       } else {
         const errorData = await response.json();
         setErrors({
-          server:
-            errorData.errorMessage || 'Something went wrong. Please try again.',
+          server: errorData.errorMessage || 'Something went wrong. Please try again.',
         });
       }
     } catch (error) {

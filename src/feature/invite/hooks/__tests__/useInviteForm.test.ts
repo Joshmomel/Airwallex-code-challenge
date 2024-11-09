@@ -54,9 +54,7 @@ describe('useInviteForm', () => {
     // Mock validateForm to return empty errors by default
     (validateForm as jest.Mock).mockReturnValue({});
 
-    global.fetch = jest
-      .fn()
-      .mockImplementationOnce(() => Promise.reject('Network error'));
+    global.fetch = jest.fn().mockImplementationOnce(() => Promise.reject('Network error'));
 
     const { result } = renderHook(() => useInviteForm());
     const mockEvent = {
@@ -72,9 +70,7 @@ describe('useInviteForm', () => {
       await result.current.handleSubmit(mockEvent as any);
     });
 
-    expect(result.current.errors.server).toBe(
-      'Something went wrong. Please try again.',
-    );
+    expect(result.current.errors.server).toBe('Something went wrong. Please try again.');
     expect(result.current.isSubmitting).toBe(false);
   });
 
@@ -129,9 +125,7 @@ describe('useInviteForm', () => {
       await result.current.handleSubmit(mockEvent as any);
     });
 
-    expect(result.current.successMessage).toBe(
-      'Your request has been sent successfully!',
-    );
+    expect(result.current.successMessage).toBe('Your request has been sent successfully!');
     expect(result.current.isSubmitting).toBe(false);
     expect(result.current.errors).toEqual({});
   });

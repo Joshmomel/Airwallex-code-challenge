@@ -23,8 +23,7 @@ const SubmitButton = styled.button`
 
   &:hover,
   &:focus-visible {
-    outline: ${({ theme }) =>
-      `${theme.borders.width.base} dotted ${theme.colors.text}`};
+    outline: ${({ theme }) => `${theme.borders.width.base} dotted ${theme.colors.text}`};
     outline-offset: ${({ theme }) => theme.borders.width.base};
   }
 
@@ -50,41 +49,27 @@ interface InviteFormProps {
   handleSubmit: (e: React.FormEvent) => void;
 }
 
-const InviteForm = React.memo<InviteFormProps>(
-  ({ errors, isSubmitting, handleSubmit }) => {
-    return (
-      <Form onSubmit={handleSubmit} noValidate data-testid="invite-form">
-        <Title>Request an invite</Title>
-        {errors.server && <ErrorMessage>{errors.server}</ErrorMessage>}
+const InviteForm = React.memo<InviteFormProps>(({ errors, isSubmitting, handleSubmit }) => {
+  return (
+    <Form onSubmit={handleSubmit} noValidate data-testid="invite-form">
+      <Title>Request an invite</Title>
+      {errors.server && <ErrorMessage>{errors.server}</ErrorMessage>}
 
-        <FormInput
-          type="text"
-          name={INVITE_FORM_FIELDS.FULL_NAME}
-          error={errors[INVITE_FORM_FIELDS.FULL_NAME]}
-        />
+      <FormInput type="text" name={INVITE_FORM_FIELDS.FULL_NAME} error={errors[INVITE_FORM_FIELDS.FULL_NAME]} />
 
-        <FormInput
-          type="email"
-          name={INVITE_FORM_FIELDS.EMAIL}
-          error={errors[INVITE_FORM_FIELDS.EMAIL]}
-        />
+      <FormInput type="email" name={INVITE_FORM_FIELDS.EMAIL} error={errors[INVITE_FORM_FIELDS.EMAIL]} />
 
-        <FormInput
-          type="email"
-          name={INVITE_FORM_FIELDS.CONFIRM_EMAIL}
-          error={errors[INVITE_FORM_FIELDS.CONFIRM_EMAIL]}
-        />
+      <FormInput
+        type="email"
+        name={INVITE_FORM_FIELDS.CONFIRM_EMAIL}
+        error={errors[INVITE_FORM_FIELDS.CONFIRM_EMAIL]}
+      />
 
-        <SubmitButton
-          type="submit"
-          disabled={isSubmitting}
-          data-testid="submit-invitation-button"
-        >
-          {isSubmitting ? 'Sending...' : 'Send'}
-        </SubmitButton>
-      </Form>
-    );
-  },
-);
+      <SubmitButton type="submit" disabled={isSubmitting} data-testid="submit-invitation-button">
+        {isSubmitting ? 'Sending...' : 'Send'}
+      </SubmitButton>
+    </Form>
+  );
+});
 
 export default InviteForm;

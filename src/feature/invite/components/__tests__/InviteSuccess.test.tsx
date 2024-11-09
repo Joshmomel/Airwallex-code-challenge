@@ -12,11 +12,7 @@ describe('InviteSuccess', () => {
     render(<InviteSuccess onClose={mockOnClose} />);
 
     expect(screen.getByText('All done!')).toBeInTheDocument();
-    expect(
-      screen.getByText(
-        "You're on the exclusive list for early access to Broccoli & Co.",
-      ),
-    ).toBeInTheDocument();
+    expect(screen.getByText("You're on the exclusive list for early access to Broccoli & Co.")).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'OK' })).toBeInTheDocument();
   });
 

@@ -6,9 +6,7 @@ import { ThemeProvider } from 'src/styles/ThemeProvider';
 // reasonable CSS reset layered on top of modern-normalize
 import '@zendeskgarden/css-bedrock';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement,
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <ThemeProvider>

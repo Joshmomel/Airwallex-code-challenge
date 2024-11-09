@@ -1,7 +1,4 @@
-import {
-  FIELD_DISPLAY_NAMES,
-  INVITE_FORM_FIELDS,
-} from 'src/feature/invite/utils/constants';
+import { FIELD_DISPLAY_NAMES, INVITE_FORM_FIELDS } from 'src/feature/invite/utils/constants';
 
 export interface FormErrors {
   [key: string]: string;
@@ -20,8 +17,7 @@ const VALIDATION_RULES = {
 
 const VALIDATION_MESSAGES = {
   required: (fieldName: string) => `${fieldName} is required`,
-  minLength: (fieldName: string, length: number) =>
-    `${fieldName} must be at least ${length} characters long`,
+  minLength: (fieldName: string, length: number) => `${fieldName} must be at least ${length} characters long`,
   invalidEmail: 'Please enter a valid email address',
   emailMismatch: 'Email addresses do not match',
 } as const;
@@ -33,8 +29,7 @@ export const validateForm = (values: FormValues): FormErrors => {
   const fullName = values[INVITE_FORM_FIELDS.FULL_NAME];
   const fullNameDisplay = FIELD_DISPLAY_NAMES[INVITE_FORM_FIELDS.FULL_NAME];
   if (!fullName) {
-    newErrors[INVITE_FORM_FIELDS.FULL_NAME] =
-      VALIDATION_MESSAGES.required(fullNameDisplay);
+    newErrors[INVITE_FORM_FIELDS.FULL_NAME] = VALIDATION_MESSAGES.required(fullNameDisplay);
   } else if (fullName.length < VALIDATION_RULES.MIN_NAME_LENGTH) {
     newErrors[INVITE_FORM_FIELDS.FULL_NAME] = VALIDATION_MESSAGES.minLength(
       fullNameDisplay,
@@ -46,22 +41,18 @@ export const validateForm = (values: FormValues): FormErrors => {
   const email = values[INVITE_FORM_FIELDS.EMAIL];
   const emailDisplay = FIELD_DISPLAY_NAMES[INVITE_FORM_FIELDS.EMAIL];
   if (!email) {
-    newErrors[INVITE_FORM_FIELDS.EMAIL] =
-      VALIDATION_MESSAGES.required(emailDisplay);
+    newErrors[INVITE_FORM_FIELDS.EMAIL] = VALIDATION_MESSAGES.required(emailDisplay);
   } else if (!VALIDATION_RULES.EMAIL_REGEX.test(email)) {
     newErrors[INVITE_FORM_FIELDS.EMAIL] = VALIDATION_MESSAGES.invalidEmail;
   }
 
   // Validate confirm email
   const confirmEmail = values[INVITE_FORM_FIELDS.CONFIRM_EMAIL];
-  const confirmEmailDisplay =
-    FIELD_DISPLAY_NAMES[INVITE_FORM_FIELDS.CONFIRM_EMAIL];
+  const confirmEmailDisplay = FIELD_DISPLAY_NAMES[INVITE_FORM_FIELDS.CONFIRM_EMAIL];
   if (!confirmEmail) {
-    newErrors[INVITE_FORM_FIELDS.CONFIRM_EMAIL] =
-      VALIDATION_MESSAGES.required(confirmEmailDisplay);
+    newErrors[INVITE_FORM_FIELDS.CONFIRM_EMAIL] = VALIDATION_MESSAGES.required(confirmEmailDisplay);
   } else if (confirmEmail !== email) {
-    newErrors[INVITE_FORM_FIELDS.CONFIRM_EMAIL] =
-      VALIDATION_MESSAGES.emailMismatch;
+    newErrors[INVITE_FORM_FIELDS.CONFIRM_EMAIL] = VALIDATION_MESSAGES.emailMismatch;
   }
 
   return newErrors;

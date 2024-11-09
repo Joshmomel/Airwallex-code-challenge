@@ -68,8 +68,6 @@ const theme = {
 
 export type Theme = typeof theme;
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>;
 };

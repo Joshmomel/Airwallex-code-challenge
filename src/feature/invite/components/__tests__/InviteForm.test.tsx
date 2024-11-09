@@ -13,15 +13,9 @@ describe('InviteForm', () => {
   it('renders all form fields', () => {
     render(<InviteForm {...defaultProps} />);
 
-    expect(
-      screen.getByPlaceholderText(FIELD_DISPLAY_NAMES.fullName),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByPlaceholderText(FIELD_DISPLAY_NAMES.email),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByPlaceholderText(FIELD_DISPLAY_NAMES.confirmEmail),
-    ).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(FIELD_DISPLAY_NAMES.fullName)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(FIELD_DISPLAY_NAMES.email)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(FIELD_DISPLAY_NAMES.confirmEmail)).toBeInTheDocument();
   });
 
   it('displays error messages when present', () => {
