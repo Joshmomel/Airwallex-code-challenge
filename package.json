@@ -1,0 +1,54 @@
+{
+  "name": "user-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "@zendeskgarden/css-bedrock": "^10.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-feather": "^2.0.10",
+    "react-focus-lock": "^2.13.2",
+    "react-remove-scroll": "^2.6.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^5.3.3",
+    "web-vitals": "^3.5.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@testing-library/dom": "^9.3.4",
+    "@testing-library/react-hooks": "^8.0.1",
+    "prettier": "^3.2.5",
+    "styled-components": "^6.1.8"
+  }
+}
